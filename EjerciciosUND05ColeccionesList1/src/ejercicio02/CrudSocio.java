@@ -15,6 +15,9 @@ public class CrudSocio {
 		this.lista = lista;
 	}
 
+	
+	
+	
 	public void agregarSocios(Socios socio) {
 		
 		lista.add(socio);
@@ -62,5 +65,23 @@ public class CrudSocio {
 		}
 		return null;
 	}
+
+
+
+
+	@Override
+	public String toString() {
+	    StringBuilder sb = new StringBuilder("Listado de socios:\n");
+	    sb.append("-----------------------------------------------------\n");
+
+	    for (Socios socio : lista) {
+	        sb.append(socio.toString()).append("\n");
+	    }
+
+	    return sb.toString();
+	}
+
+	
+	
 	
 }

@@ -17,6 +17,7 @@ public class Principal {
 		Socios so3 = new Socios("Lucas","Ortiz",3,"4546474",27);
 		Socios so4 = new Socios("Jose","Pastor",4,"3435363",28);
 		
+		int opcion=0;
 		
 		
 		
@@ -29,10 +30,56 @@ public class Principal {
 		lista.add(so3);
 		lista.add(so4);
 		
-		lista.remove(0);
+		
 		
 		System.out.println(	crdSo.buscarPorId(1));
-;
+		
+		do {
+			
+			System.out.println("Elija la opción que prefiera");
+			System.out.println("""
+			0.Salir		
+			1.Buscar socios
+			2.Mostar todos los datos
+			3.Borrar datos		
+					""");
+			opcion=Integer.parseInt(sc.nextLine());
+			
+			switch(opcion) {
+			
+				case 0: 
+				System.out.println("Saliendo...");
+				break;
+				
+				case 1:
+					System.out.println("Indíque la Id del socio que desea buscar");
+					
+					
+					System.out.println(crdSo.buscarPorId(Integer.parseInt(sc.nextLine())));
+					break;
+				case 2:
+					System.out.println(crdSo.toString());
+					
+					break;
+				case 3:
+					System.out.println("¿Que ID de socio desea eliminar?");
+					crdSo.eliminarSocio(Integer.parseInt(sc.nextLine()));
+					
+				default:
+					System.out.println("La opción elegida no esta establecida");
+					break;
+					
+					
+					
+					
+			
+			}
+			
+			
+			
+		
+		}while(opcion!=0);
+
 		
 		
 		
