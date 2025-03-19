@@ -1,6 +1,7 @@
 package ejercicio02;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -23,6 +24,7 @@ public class Principal {
 		
 		List<Socios> lista = new ArrayList<Socios>();
 		CrudSocio crdSo = new CrudSocio(lista);
+		Club club = new Club(lista);
 		
 		lista.add(so);
 		lista.add(so1);
@@ -41,7 +43,9 @@ public class Principal {
 			0.Salir		
 			1.Buscar socios
 			2.Mostar todos los datos
-			3.Borrar datos		
+			3.Borrar datos	
+			4. Ordenador por ID	
+			5. Ordenador por Edad
 					""");
 			opcion=Integer.parseInt(sc.nextLine());
 			
@@ -64,6 +68,15 @@ public class Principal {
 				case 3:
 					System.out.println("¿Que ID de socio desea eliminar?");
 					crdSo.eliminarSocio(Integer.parseInt(sc.nextLine()));
+					break;
+				case 4:
+					Collections.sort(lista);
+					System.out.println(crdSo.toString());
+					break;
+				case 5:
+					club.ordenarPorEdad();
+					
+					break;
 					
 				default:
 					System.out.println("La opción elegida no esta establecida");

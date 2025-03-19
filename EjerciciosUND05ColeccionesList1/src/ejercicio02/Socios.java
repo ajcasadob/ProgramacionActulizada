@@ -1,6 +1,6 @@
 package ejercicio02;
 
-public class Socios {
+public class Socios implements Comparable<Socios> {
 	
 	private String nombre;
 	private String apellido;
@@ -73,6 +73,19 @@ public class Socios {
 	public String toString() {
 		return "Socios [nombre=" + nombre + ", apellido=" + apellido + ", id=" + id + ", dni=" + dni + ", edad=" + edad
 				+ "]";
+	}
+
+
+	@Override
+	public int compareTo(Socios o) {
+		// TODO Auto-generated method stub
+		if(this.id>o.id) {
+			return 1;
+			}else if(this.id<o.id) {
+				return -1;
+				
+			}
+		return 0;
 	}
 	
 	
