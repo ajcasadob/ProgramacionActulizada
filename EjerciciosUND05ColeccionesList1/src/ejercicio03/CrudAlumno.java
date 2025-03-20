@@ -6,8 +6,17 @@ public class CrudAlumno {
     
 
     private Set<Alumno> alumnos;
+    
+    
+    
 
-    public void  insertarAlumno(Alumno alumno){
+    public CrudAlumno(Set<Alumno> alumnos) {
+		super();
+		this.alumnos = alumnos;
+	}
+
+
+	public void  insertarAlumno(Alumno alumno){
 
         alumnos.add(alumno);
 
