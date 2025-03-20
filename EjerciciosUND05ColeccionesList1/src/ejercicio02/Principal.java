@@ -12,11 +12,11 @@ public class Principal {
 
 		Scanner sc = new Scanner(System.in);
 		
-		Socios so = new Socios("Antonio","Casado",0,"4343563",24);
+		Socios so = new Socios("Antonio","Casado",0,"4343563",28);
 		Socios so1 = new Socios("Pepe","Oliva",1,"3435353",25);
-		Socios so2 = new Socios("Jesus","Santos",2,"4545646",26);
+		Socios so2 = new Socios("Jesus","Santos",2,"4545646",46);
 		Socios so3 = new Socios("Lucas","Ortiz",3,"4546474",27);
-		Socios so4 = new Socios("Jose","Pastor",4,"3435363",28);
+		Socios so4 = new Socios("Jose","Pastor",4,"3435363",78);
 		
 		int opcion=0;
 		
@@ -46,6 +46,7 @@ public class Principal {
 			3.Borrar datos	
 			4. Ordenador por ID	
 			5. Ordenador por Edad
+			6. Actualizar datos
 					""");
 			opcion=Integer.parseInt(sc.nextLine());
 			
@@ -76,6 +77,20 @@ public class Principal {
 				case 5:
 					club.ordenarPorEdad();
 					
+					break;
+				case 6:
+					System.out.println("Indique la ID del socio que desea actualizar");
+					int id = Integer.parseInt(sc.nextLine());
+					System.out.println("Indique el nombre");
+					String nombre = sc.nextLine();
+					System.out.println("Indique el apellido");
+					String apellido = sc.nextLine();
+					System.out.println("Indique el DNI");
+					String dni = sc.nextLine();
+					System.out.println("Indique la edad");
+					int edad = Integer.parseInt(sc.nextLine());
+					
+					crdSo.actualizarSocio(id, nombre, apellido, dni, edad);
 					break;
 					
 				default:

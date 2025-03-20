@@ -76,20 +76,21 @@ public class Socios implements Comparable<Socios> {
 	}
 
 
+	
 	@Override
 	public int compareTo(Socios o) {
-		// TODO Auto-generated method stub
-		if(this.id>o.id) {
-			return 1;
-			}else if(this.id<o.id) {
-				return -1;
-				
-			}
-		return 0;
+	    if (this.id > o.id) {
+	        return 1;
+	    } else if (this.id < o.id) {
+	        return -1;
+	    } else {
+	        return 0;
+	    }
 	}
-	
-	
-	
-	
 
+	
+	
+	
 }
+
+

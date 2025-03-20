@@ -1,5 +1,7 @@
 package ejercicio02;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -63,9 +65,19 @@ public class CrudSocio {
 		if(s!=null) {
 			return s;
 		}
+			
 		return null;
+		
 	}
 
+
+	
+	public List<Socios> sortList(){
+		List<Socios> newList = new ArrayList<Socios>();
+		Collections.sort(newList);
+		return newList;
+		
+	}
 
 
 
@@ -83,5 +95,5 @@ public class CrudSocio {
 
 	
 	
-	
+
 }
