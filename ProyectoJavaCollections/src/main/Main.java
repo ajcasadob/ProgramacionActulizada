@@ -10,8 +10,15 @@ import java.util.Scanner;
 
 /*
  * Sistema de Gestión de Libros
- 
- * ...
+ * Se requiere una aplicación de consola para gestionar una colección de libros.
+ * El sistema debe permitir agregar, eliminar, listar libros y realizar operaciones
+ * sobre la colección utilizando la clase Collections de Java.
+ * Las operaciones incluyen: ordenar por título, invertir el orden de la lista,
+ * buscar libros mediante búsqueda binaria, obtener el libro más antiguo (mínimo),
+ * sincronizar la lista para seguridad en concurrencia y crear una lista inmutable
+ * que no se pueda modificar.
+ * 
+ * Debe mostrarse un menú que permita al usuario interactuar con el sistema.
  */
 
 public class Main {
@@ -73,11 +80,11 @@ public class Main {
                     crud.mostrarLibroMasAntiguo();
                     break;
                 case 8:
-                    List listaSync = crud.obtenerListaSincronizada();
+                    List<Libro> listaSync = crud.obtenerListaSincronizada();
                     System.out.println("Lista sincronizada creada. Tamaño: " + listaSync.size());
                     break;
                 case 9:
-                    List listaInmutable = crud.obtenerListaInmutable();
+                    List<Libro> listaInmutable = crud.obtenerListaInmutable();
                     System.out.println("Lista inmutable creada. Tamaño: " + listaInmutable.size());
                     break;
                 case 0:
