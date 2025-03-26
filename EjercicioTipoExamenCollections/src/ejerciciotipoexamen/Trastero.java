@@ -77,13 +77,13 @@ public class Trastero implements Comparable <Trastero>{
 		}else {
 			if(numTrastero<o.getNumTrastero()) {
 				
-				return -Double.compare(capacidadMetros, o.getCapacidadMetros());
+				return 1;
 			}
 			
 		}
 			
 		
-		return 1;
+		return 0;
 		
 	}
 	

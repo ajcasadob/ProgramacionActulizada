@@ -13,9 +13,9 @@ public class OrdenarPorPrecio implements Comparator<Trastero> {
 			return -1;
 		}else {
 			if(o1.getPrecio()==o2.getPrecio()) {
-				return -Double.compare(o1.getCapacidadMetros(), o2.getCapacidadMetros());
+				return 1;
 			}
-			return 1;
+			return 0;
 		}
 		
 	}
