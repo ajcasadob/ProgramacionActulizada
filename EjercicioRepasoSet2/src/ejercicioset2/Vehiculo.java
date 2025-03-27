@@ -1,5 +1,7 @@
 package ejercicioset2;
 
+import java.util.Objects;
+
 public class Vehiculo implements Comparable<Vehiculo> {
 	
 	private String matri;
@@ -92,6 +94,27 @@ public class Vehiculo implements Comparable<Vehiculo> {
 	public int compareTo(Vehiculo o) {
 		
 		return -Double.compare(o.getYear(), year);
+	}
+
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(brand, matri, model, ocu, priceDay, year);
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Vehiculo other = (Vehiculo) obj;
+		return Objects.equals(brand, other.brand) && Objects.equals(matri, other.matri)
+				&& Objects.equals(model, other.model) && ocu == other.ocu
+				&& Double.doubleToLongBits(priceDay) == Double.doubleToLongBits(other.priceDay) && year == other.year;
 	}
 	
 	
