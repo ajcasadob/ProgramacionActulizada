@@ -1,7 +1,7 @@
 package model;
 
 import java.util.Objects;
-
+//Clase POJO
 public class Producto implements Comparable<Producto> {
 
 	 	private int id;
@@ -84,9 +84,9 @@ public class Producto implements Comparable<Producto> {
 		}
 
 		@Override
-		public int compareTo(Producto o) {
+		public int compareTo(Producto p) {
 			
-			return nombre.compareTo(getNombre());
+			return-p.getNombre().compareTo(nombre);
 		}
 	    
 	    

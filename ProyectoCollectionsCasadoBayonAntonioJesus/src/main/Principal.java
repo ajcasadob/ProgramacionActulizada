@@ -24,6 +24,7 @@ public class Principal {
     - Invertir el orden de la lista de productos.
     - Encontrar un producto con precio mínimo y máximo.
     - Rellenar una lista con un producto específico.
+    - Implementamos todos los metodos en la clase Principal para hacer pruebas.
     
 */
 

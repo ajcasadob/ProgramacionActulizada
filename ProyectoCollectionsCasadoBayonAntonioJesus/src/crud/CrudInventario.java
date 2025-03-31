@@ -52,10 +52,11 @@ public class CrudInventario {
 	}
 
 
+	//Metodo para agregar nuevos productos
 	public void agregarProducto(Producto p) {
         productos.add(p);
     }
-
+	//Metodo para buscar un producto por ID
     public Producto buscarProductoPorId(int id) {
     	
     	for(Producto p : productos) {
@@ -66,11 +67,12 @@ public class CrudInventario {
     	}
     	return null;
     }
+    //Metodo para eliminar un producto
     public void eliminarUnProducto(int id) {
     	
     	productos.remove(buscarProductoPorId(id));
     }
-    
+    //Listamos la lista de productos
     public void listarProductos() {
     	for (Producto p : productos) {
     		
@@ -78,6 +80,7 @@ public class CrudInventario {
 			
 		}
     }
+    //Metodo para ordenar por nombre, nos devuelve una nueva lista ordenada por orden alfabetico
     public List<Producto> ordenarPorNombre(){
     	List<Producto> newList = new ArrayList<Producto>(productos);
     	
@@ -85,7 +88,7 @@ public class CrudInventario {
     	Collections.sort(newList);
     	return newList;
     }
-    
+    //Metodo para ordenar por precio, nos devuelve una lista de productos ordenadas de menor a mayor
     public List<Producto> ordenarPorPrecioList (){
     	
     	List<Producto> newList = new ArrayList<Producto>(productos);
@@ -94,6 +97,7 @@ public class CrudInventario {
     	
     	return newList;
     }
+    //Nos devuelve una lista mezclada de productos
     public List<Producto> mezclarProductos(){
     	List<Producto> newList = new ArrayList<Producto>(productos);
     	
@@ -101,44 +105,48 @@ public class CrudInventario {
     	return newList;
     }
     
+    //Buscamos producto por precio
+    public List<Producto> buscarProductosPorPrecio(double precio){
+    	List<Producto> newList = new ArrayList<>();
+    	
+    			for(Producto p : productos) {
+    				if(p.getPrecio()==precio) {
+    					newList.add(p);
+    				}
+    				
+    			}
+    			return newList;
+    }
+  //Obtenemos el producto mas caro
     public List<Producto> obtenerProductosMasCaro(){
     	
-    	List<Producto> productosCarosList = new ArrayList<Producto>();
-    	double precioMax=0.0;
-    	for(Producto p : productos) {
-    		if(p.getPrecio()>precioMax) {
-    			
-    			precioMax = p.getPrecio();
+    	
+    	double precioMax=productos.getFirst().getPrecio();
+    	
+    		for(Producto p : productos) {
+    			if(p.getPrecio()>precioMax) {
+    				
+    				precioMax = p.getPrecio();
+    			}
     		}
-    		
-    	}
-    	for(Producto p : productos) {
-    		
-    		if(p.getPrecio()==precioMax) {
-    			productosCarosList.add(p);
-    		}
-    	}
-    	return productosCarosList;
+    		return buscarProductosPorPrecio(precioMax);
+    
     }
     
+    
+    
+    //Obtenemos los productos mas baratos
     public List<Producto> obtenerProductosBaratos (){
+    	double precioMin =productos.getFirst().getPrecio();
     	
-    	List<Producto> productoBaratosList = new ArrayList<Producto>();
-    	
-    	double precioMin=0;
-    	
-    	for(Producto p : productos) {
-    		if(p.getPrecio()<precioMin) {
-    			precioMin = p.getPrecio();
+    		for(Producto p : productos) {
+    			if(p.getPrecio()<=precioMin) {
+    				precioMin = p.getPrecio();
+    			}
     		}
-    	}
-    	for(Producto p : productos) {
-    		if(p.getPrecio()==precioMin) {
-    			productoBaratosList.add(p);
-    		}
-    	}
-    	return productoBaratosList;
+    	return buscarProductosPorPrecio(precioMin);
     }
+    //Invertimos y devolvemos una nueva lista
     public List<Producto> invertirListaProductos (){
     	
     	List<Producto> listaInvertidaList = new ArrayList<Producto>(productos);
