@@ -1,4 +1,5 @@
 package lambda;
+
 @FunctionalInterface
 public interface Operacion {
 
