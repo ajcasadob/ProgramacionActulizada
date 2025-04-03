@@ -36,7 +36,7 @@ public class Secretaria {
 	
 	public void mostrarTodosLosAlumnos() {
 		
-		list.stream().forEach(al -> System.out.println(al));
+		list.stream().forEach(System.out::println);
 	}
 	
 	//Imprimir todos los alumnos cuyo nombre empiece por una letra

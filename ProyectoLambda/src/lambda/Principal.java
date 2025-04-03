@@ -9,6 +9,10 @@ public class Principal {
 		
 		System.out.println(suma.calcular(5, 2));
 		
+		
+		Operacion multi = (int m1 , int m2 )-> m1*m2;
+		
+		System.out.println(multi.calcular(5, 5));
 	}
 
 }
